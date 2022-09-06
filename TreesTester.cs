@@ -5,7 +5,7 @@ public static class TreesTester {
     /// Entry point for the Prove 9 tests
     /// </summary>
     public static void Run() {
-        // Sample Test Cases (may not be comprehensive) 
+        // Sample Test Cases (may not be comprehensive)
         Console.WriteLine("\n=========== PROBLEM 1 TESTS ===========");
         BinarySearchTree tree = new BinarySearchTree();
         tree.Insert(5);
@@ -13,7 +13,8 @@ public static class TreesTester {
         tree.Insert(7);
         // After implementing 'no duplicates' rule,
         // this next insert will have no effect on the tree.
-        tree.Insert(7);  
+        // TODO Problem 1
+        tree.Insert(7);
         tree.Insert(4);
         tree.Insert(10);
         tree.Insert(1);
