@@ -29,9 +29,8 @@ public static class TreesTester {
         Console.WriteLine(tree.Contains(9)); // False
 
         Console.WriteLine("\n=========== PROBLEM 3 TESTS ===========");
-        foreach (var value in tree.Reverse())
-        {
-            Console.WriteLine(value);  // 10, 7, 6, 5, 4, 3, 1
+        foreach (var value in tree.Reverse()) {
+            Console.WriteLine(value); // 10, 7, 6, 5, 4, 3, 1
         }
 
         Console.WriteLine("\n=========== PROBLEM 4 TESTS ===========");
@@ -42,10 +41,10 @@ public static class TreesTester {
         Console.WriteLine(tree.GetHeight()); // 4
 
         Console.WriteLine("\n=========== PROBLEM 5 TESTS ===========");
-        var tree1 = CreateTreeFromSortedList(new[] {10, 20, 30, 40, 50, 60});
+        var tree1 = CreateTreeFromSortedList(new[] { 10, 20, 30, 40, 50, 60 });
         var tree2 = CreateTreeFromSortedList(Enumerable.Range(0, 127).ToArray()); // 2^7 - 1 nodes
         var tree3 = CreateTreeFromSortedList(Enumerable.Range(0, 128).ToArray()); // 2^7 nodes
-        var tree4 = CreateTreeFromSortedList(new[] {42});
+        var tree4 = CreateTreeFromSortedList(new[] { 42 });
         var tree5 = CreateTreeFromSortedList(Array.Empty<int>());
         Console.WriteLine(tree1.GetHeight()); // 3
         Console.WriteLine(tree2.GetHeight()); // 7 .. any higher and its not balanced
@@ -63,8 +62,7 @@ public static class TreesTester {
     /// a range (first to last) to consider.  For the first call, the full range of 0 to
     /// Length-1 used.
     /// </summary>
-    private static BinarySearchTree CreateTreeFromSortedList(int[] sortedNumbers)
-    {
+    private static BinarySearchTree CreateTreeFromSortedList(int[] sortedNumbers) {
         var bst = new BinarySearchTree(); // Create an empty BST to start with 
         InsertMiddle(sortedNumbers, 0, sortedNumbers.Length - 1, bst);
         return bst;
@@ -100,8 +98,7 @@ public static class TreesTester {
     /// <param name="first">the first index in the sortedNumbers to insert</param>
     /// <param name="last">the last index in the sortedNumbers to insert</param>
     /// <param name="bst">the BinarySearchTree in which to insert the values</param>
-    private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst)
-    {
+    private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst) {
         // TODO Start Problem 5
     }
 }

@@ -24,16 +24,14 @@ public class BinarySearchTree : IEnumerable<int> {
     /// </summary>
     /// <param name="value">The value to look for</param>
     /// <returns>true if found, otherwise false</returns>
-    public bool Contains(int value)
-    {
+    public bool Contains(int value) {
         return _root != null && _root.Contains(value);
     }
 
     /// <summary>
     /// Yields all values in the tree
     /// </summary>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
+    IEnumerator IEnumerable.GetEnumerator() {
         // call the generic version of the method
         return GetEnumerator();
     }
@@ -41,20 +39,16 @@ public class BinarySearchTree : IEnumerable<int> {
     /// <summary>
     /// Iterate forward through the BST
     /// </summary>
-    public IEnumerator<int> GetEnumerator()
-    {
+    public IEnumerator<int> GetEnumerator() {
         var numbers = new List<int>();
         TraverseForward(_root, numbers);
-        foreach (var number in numbers)
-        {
+        foreach (var number in numbers) {
             yield return number;
         }
     }
 
-    private void TraverseForward(Node? node, List<int> values)
-    {
-        if (node is not null)
-        {
+    private void TraverseForward(Node? node, List<int> values) {
+        if (node is not null) {
             TraverseForward(node.Left, values);
             values.Add(node.Data);
             TraverseForward(node.Right, values);
@@ -67,22 +61,19 @@ public class BinarySearchTree : IEnumerable<int> {
     public IEnumerable Reverse() {
         var numbers = new List<int>();
         TraverseBackward(_root, numbers);
-        foreach (var number in numbers)
-        {
+        foreach (var number in numbers) {
             yield return number;
         }
     }
 
-    private void TraverseBackward(Node? node, List<int> values)
-    {
+    private void TraverseBackward(Node? node, List<int> values) {
         // TODO Problem 3
     }
-    
+
     /// <summary>
     /// Get the height of the tree
     /// </summary>
-    public int GetHeight()
-    {
+    public int GetHeight() {
         if (_root is null)
             return 0;
         return _root.GetHeight();
