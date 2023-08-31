@@ -42,5 +42,5 @@ Please note we are not using balanced algorithms like AVL or red/black trees in 
 
 ## Submission
 You need to submit the following for this assignment:
-* Make sure all of your changes are committed and pushed to the `main` branch of your **prove-09-[username]** repository
+* Make sure all of your changes are committed and pushed to the `main` branch of your **prove-09** repository
 * Submit a link to your repository in I-Learn
