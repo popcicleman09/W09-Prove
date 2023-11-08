@@ -6,15 +6,15 @@ public class BinarySearchTree : IEnumerable<int> {
     private Node? _root;
 
     /// <summary>
-    /// Insert a new node at the front (i.e. the head) of the linked list.
+    /// Insert a new node at the root of the tree.
     /// </summary>
     public void Insert(int value) {
         // Create new node
         Node newNode = new Node(value);
-        // If the list is empty, then point both head and tail to the new node.
+        // If the list is empty, then point root to the new node.
         if (_root is null)
             _root = newNode;
-        // If the list is not empty, then only head will be affected.
+        // If the list is not empty, then only root will be affected.
         else
             _root.Insert(value);
     }
