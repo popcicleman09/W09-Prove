@@ -1,3 +1,5 @@
+using System.Runtime.ExceptionServices;
+
 namespace prove_09;
 
 public class Node {
@@ -27,12 +29,27 @@ public class Node {
     }
 
     public bool Contains(int value) {
-        // TODO Start Problem 2
-        return false;
+        if(Data == value){
+            return true;
+        }else if(value < Data){
+            if(Left is not null){return Left.Contains(value);} else {return false;}
+        }else if(value > Data){
+            if(Right is not null){return Right.Contains(value);} else {return false;}
+        }else{
+            return false;
+        }
     }
 
     public int GetHeight() {
-        // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        var height = 1;
+        var sumRight = 0;
+        var sumLeft = 0;
+        if(Right is not null)
+            sumRight =+ Right.GetHeight();//recusivly counts down each path
+        if(Left is not null)
+            sumLeft += Left.GetHeight(); //recusivly counts down each path
+        height = sumRight > sumLeft ? sumRight : sumLeft; //picks which path was longer
+        height +=1; //adds 1 for the current node
+        return height; //sends the higher heigt back up the recursion
     }
 }
